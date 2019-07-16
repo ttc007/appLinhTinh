@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Eccube test</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div style="margin-top:300px;font-size: 1.5em" class="text-center">
+		Enter fc2 ID test <input type="" name=""><button>Callback</button>
+	</div>
+	
+	<audio src="audio/Caosonluuthuy.mp3" id="audio1" ></audio>
+	<audio src="audio/Caosonluuthuy.mp3" id="audio2" ></audio>
+	<audio src="audio/Caosonluuthuy.mp3" id="audio3" ></audio>
+	<audio src="audio/Caosonluuthuy.mp3" id="audio4" ></audio>
+	<audio src="audio/Caosonluuthuy.mp3" id="audio5" ></audio>
+	<audio src="audio/Caosonluuthuy.mp3" id="audio6" ></audio>
+	<audio src="audio/Caosonluuthuy.mp3" id="audio7" ></audio>
+	<audio src="audio/Caosonluuthuy.mp3" id="audio8" ></audio>
+
+</body>
+
+<script type="text/javascript">
+	$(document).on('keypress',function(e) {
+		if($("#audioChoose").val()=="1") {
+			$("#audioChoose").val("2");
+		} else {
+			$("#audioChoose").val("1");
+		}
+		console.log(e.which);
+	    switch(e.which) {
+		  	case 97:
+		    	keySprite("A", "1");
+		    	break;
+		  	case 103:
+		    	keySprite("G", "2");
+		    	break;
+		   	case 108:
+		    	keySprite("L", "3");
+		    	break;
+		    case 101:
+		    	keySprite("E", "4");
+		    	break;
+		    case 59:
+		    	keySprite(":", "5");
+		    	break;
+		    case 99:
+		    	keySprite("C", "6");
+		    	break;
+		    case 114:
+		    	keySprite("R", "7");
+		    	break;
+		    case 52:
+		    	keySprite("4K", "8");
+		    	break;
+		    case 119:
+		    	keySprite("W", "1");
+		    	break;
+		    case 432:
+		    	keySprite("W", "1");
+		    	break;
+		    case 116:
+		    	keySprite("T", "3");
+		    	break;
+		    case 113:
+		    	keySprite("Q", "2");
+		    	break;
+		    case 98:
+		    	keySprite("B", "4");
+		    	break;
+		    case 120:
+		    	keySprite("X", "5");
+		    	break;
+		    case 122:
+		    	keySprite("Z", "6");
+		    	break;
+		    case 104:
+		    	keySprite("H", "7");
+		    	break;
+		    case 117:
+		    	keySprite("U", "1");
+		    	break;
+		    case 118:
+		    	keySprite("V", "2");
+		    	break;
+		    case 112	:
+		    	keySprite("P", "3");
+		    	break;
+		    case 102	:
+		    	keySprite("F", "3");
+		    	break;
+		    case 121:
+		    	keySprite("Y", "4");
+		    	break;
+		    case 109:
+		    	keySprite("M", "5");
+		    	break;
+		  	default:
+		    // code block
+		}
+	});
+
+	function playAudio_2(start, length, generator) {
+		var audioObj = document.getElementById('audio'+generator);
+		
+		audioObj.currentTime = start;
+	 
+		audioObj.play();
+	 	$(audioObj).attr("length", length);
+	 	$(audioObj).attr("start", start);
+		audioObj.addEventListener('timeupdate', function() {
+			var length1 = parseFloat($(audioObj).attr("length"));
+			var start1 = parseFloat($(audioObj).attr("start"));
+			if (this.currentTime > start1 + length1) {
+				this.pause();
+			}
+		});
+	}
+
+	function keySprite(key, generator){
+		var start = 0;
+		var length = 0;
+		switch(key) {
+		  	case "A":
+		    	start = 0.5;
+		    	length = 0.5;
+		    	break;
+		  	case "G":
+		    	start = 2;
+		    	length = 0.4;
+		    	break;
+		   	case "L":
+		    	start = 2.5;
+		    	length = 0.5;
+		    	break;
+		    case "E":
+		    	start = 3.4;
+		    	length = 0.5;
+		    	break;
+		    case ":":
+		    	start = 4.2;
+		    	length = 0.7;
+		    	break;
+		    case "C":
+		    	start = 5;
+		    	length = 0.5;
+		    	break;
+		    case "R":
+		    	start = 6;
+		    	length = 0.5;
+		    	break;
+		    case "4K":
+		    	start = 7;
+		    	length = 0.5;
+		    	break;
+		    case "W":
+		    	start = 9;
+		    	length = 0.3;
+		    	break;
+		    case "T":
+		    	start = 9.5;
+		    	length = 0.5;
+		    	break;
+		    case "Q":
+		    	start = 10.2;
+		    	length = 0.5;
+		    	break;
+		    case "B":
+		    	start = 11.2;
+		    	length = 0.7;
+		    	break;
+		    case "X":
+		    	start = 12;
+		    	length = 0.3;
+		    	break;
+		    case "Z":
+		    	start = 13.2;
+		    	length = 0.3;
+		    	break;
+		    case "H":
+		    	start = 13.7;
+		    	length = 0.5;
+		    	break;
+		    case "U":
+		    	start = 14.6;
+		    	length = 0.7;
+		    	break;
+		    // case "V":
+		    // 	start = 15.8;
+		    // 	length = 0.3;
+		    // 	break;
+		    case "P":
+		    	start = 16.4;
+		    	length = 0.5;
+		    	break;
+		    case "F":
+		    	start = 17;
+		    	length = 0.5;
+		    	break;
+		    case "Y":
+		    	start = 18;
+		    	length = 0.5;
+		    	break;
+		    case "M":
+		    	start = 19;
+		    	length = 0.3;
+		    	break;
+		  	default:
+		    // code block
+		}
+		playAudio_2(start, length, generator);
+	}
+</script>
+</html>
